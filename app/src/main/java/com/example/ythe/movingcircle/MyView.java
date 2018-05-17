@@ -15,22 +15,20 @@ public class MyView extends View {
     int mY = this.getHeight()/2;
     int mVX = 7;
     int mVY = 5;
-    //int width = getWidth();
-    //int height = getHeight();
-
 
 
     @Override
     protected void onDraw(Canvas canvas) {
 
-        //int mX = getWidth()/2;
-        //int mY = getHeight()/2;
-        //int mVX = 7;
-        //int mVY = 5;
         super.onDraw(canvas);
         canvas.drawColor(Color.argb(255, 142, 107 ,135));
         Paint paint = new Paint();
         paint.setColor(Color.argb(233, 132, 32, 51));
+        Log.d("mX", String.valueOf(mX));
+        Log.d("mY", String.valueOf(mY));
+        Log.d("getWidth", String.valueOf(this.getWidth()/2));
+        Log.d("getHeight", String.valueOf(this.getHeight()/2));
+
         canvas.drawCircle(mX, mY, 100, paint);
 
         if (mX > this.getWidth()) {
@@ -38,7 +36,7 @@ public class MyView extends View {
         } else if (mX < 0) {
             mVX = -mVX;
         }
-        if (mY > this.getWidth()) {
+        if (mY > this.getHeight()) {
             mVY = -mVY;
         } else if (mY < 0) {
             mVY = -mVY;
